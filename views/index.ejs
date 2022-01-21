@@ -1,0 +1,23 @@
+<%- include("header") -%>
+
+
+
+
+
+    <div class="card border-0">
+        <div class="card-body">
+            <% for(var i = 0; i < blogTitles.length; i++) { %>
+                <h5 class="card-title"><%= blogTitles[i] %></h5>
+                
+                <% if(blogBodies[i].length > 99) { %>
+                    <p class="card-text mb-4"><%= blogBodies[i].substring(0,99) %>... <a href="/post/<%= [i] %>">Reader More</a></p>
+                <% } else { %>
+                    <p class="card-text mb-4"><%= blogBodies[i] %></p>
+                <% } %>
+                
+                
+            <% } %>
+        </div>
+    </div>
+
+<%- include("footer") -%>
